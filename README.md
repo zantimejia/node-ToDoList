@@ -1,8 +1,8 @@
-## Aplicacion de Comandos
+# Aplicacion de Comandos
 
 Recuerde ejecutar ``npm install`` para las librerias.
 
-# Ejemplos
+## Ejemplos
 
 - node app.js crear -d "Hacer las compras"
 - node app.js listar - node app.js listar -f "terminadas" - node app.js listar -f "pendientes"
