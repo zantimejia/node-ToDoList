@@ -30,8 +30,19 @@ const crear = (descripcion) => {
     return listadoPorHacer
 }
 
-const listar = () => {
+const listar = (filtro = 'todas') => {
     cargarDB()
+    if (filtro !== 'todas') {
+        let tareasFiltradas
+        switch (filtro) {
+            case 'terminadas':
+                tareasFiltradas = listadoPorHacer.filter(tarea => tarea.completado == true)
+                return tareasFiltradas
+            case 'pendientes':
+                tareasFiltradas = listadoPorHacer.filter(tarea => tarea.completado == false)
+                return tareasFiltradas
+        }
+    }
     return listadoPorHacer
 }
 

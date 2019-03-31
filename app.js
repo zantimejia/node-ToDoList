@@ -9,15 +9,27 @@ switch (comando) {
         let tarea = crear(argv.descripcion)
         break
     case 'listar':
-        let listado = listar()
-        for (let tarea of listado) {
-            console.log('==========Por Hacer=========='.green);
-            if (tarea.completado) {
-                console.log(colors.green('️️️✔️ ', tarea.descripcion))
-            } else {
-                console.log(colors.red('️️️❌ ', tarea.descripcion))
+        let listado = listar(argv.filtro)
+        if (argv.filtro === 'todas') {
+            if (argv.filtro == 'todas') {
+                console.log('==========ToDoList=========='.green);
+                for (let tarea of listado) {
+                    if (tarea.completado) {
+                        console.log(colors.green('️️️✔️ ', tarea.descripcion))
+                    } else {
+                        console.log(colors.red('️️️❌ ', tarea.descripcion))
+                    }
+                }
+                console.log('============================='.green);
+            }
+        } else if (argv.filtro === 'terminadas' || argv.filtro === 'pendientes') {
+            console.log('==========ToDoList=========='.green);
+            for (let tarea of listado) {
+                console.log(tarea.descripcion);
             }
             console.log('============================='.green);
+        } else {
+            console.log('Filtro no reconocido');
         }
         break;
     case 'actualizar':
