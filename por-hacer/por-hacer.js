@@ -50,7 +50,8 @@ const actulizar = (descripcion, completado = true) => {
     cargarDB()
     let index = listadoPorHacer.findIndex(tarea => tarea.descripcion === descripcion)
     if (index >= 0) {
-        listadoPorHacer[index].completado = completado
+        // listadoPorHacer[index].completado = JSON.parse(completado)
+        listadoPorHacer[index].completado = (completado)
         guardarDB()
         return true
     } else {
