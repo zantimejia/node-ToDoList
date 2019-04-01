@@ -1,7 +1,10 @@
-## Aplicacion de Comandos
+# Aplicacion de Comandos
 
-Recuerde instalar los paquetes de node
+Recuerde ejecutar ``npm install`` para las librerias.
 
-```
-npm install
-```
+## Ejemplos
+
+- node app.js crear -d "Hacer las compras"
+- node app.js listar - node app.js listar -f "terminadas" - node app.js listar -f "pendientes"
+- node app.js actualizar -d "Hacer las compras" -c true
+- node app.js borrar -d "Hacer las compras"
